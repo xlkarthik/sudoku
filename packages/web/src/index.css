@@ -27,8 +27,6 @@ body {
   min-height: 100vh;
   color: var(--text-color);
   padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 120px);
-  padding-left: calc(env(safe-area-inset-left, 0px) + 12px);
-  padding-right: calc(env(safe-area-inset-right, 0px) + 12px);
 }
 
 #root {
@@ -115,6 +113,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   width: min(90vw, 520px);
+  margin: 0 auto;
   border: 3px solid var(--border-color);
 }
 
@@ -143,7 +142,8 @@ h2 {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -1.5px;
+  right: 0;
+  transform: translateX(50%);
   width: 3px;
   background: var(--border-color);
 }
@@ -154,7 +154,8 @@ h2 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1.5px;
+  bottom: 0;
+  transform: translateY(50%);
   height: 3px;
   background: var(--border-color);
 }
