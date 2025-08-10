@@ -133,13 +133,31 @@ h2 {
   border-right: 0;
   border-bottom: 0;
   aspect-ratio: 1 / 1;
+  position: relative;
 }
 
 /* Add thick borders for 3x3 box separation */
-.sudoku-cell[data-col="2"],
-.sudoku-cell[data-col="5"] { border-right: 3px solid var(--border-color); }
-.sudoku-cell[data-row="2"],
-.sudoku-cell[data-row="5"] { border-bottom: 3px solid var(--border-color); }
+.sudoku-cell[data-col="2"]::after,
+.sudoku-cell[data-col="5"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1.5px;
+  width: 3px;
+  background: var(--border-color);
+}
+
+.sudoku-cell[data-row="2"]::before,
+.sudoku-cell[data-row="5"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.5px;
+  height: 3px;
+  background: var(--border-color);
+}
 
 /* Close the grid with fine inner edges on last row/col (outer edge handled by container) */
 .sudoku-cell[data-col="8"] { border-right: 1px solid #ddd; }

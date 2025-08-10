@@ -341,7 +341,7 @@ function App() {
 
       <div className="content">
         {gameState && (
-          <div className="board">
+          <div className="board" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
             <div className="sudoku-container">
               <div className="sudoku-grid">
                 {Array.from({ length: 9 }, (_, row) =>
