@@ -27,6 +27,8 @@ body {
   min-height: 100vh;
   color: var(--text-color);
   padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 120px);
+  padding-left: calc(env(safe-area-inset-left, 0px) + 12px);
+  padding-right: calc(env(safe-area-inset-right, 0px) + 12px);
 }
 
 #root {
@@ -112,7 +114,7 @@ h2 {
 .sudoku-grid {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  width: min(92vw, 520px);
+  width: min(90vw, 520px);
   border: 3px solid var(--border-color);
 }
 
@@ -362,7 +364,7 @@ h2 {
 /* Responsive Design */
 @media (max-width: 768px) {
   .content { grid-template-columns: 1fr; }
-  .sudoku-grid { width: min(92vw, 420px); }
+  .sudoku-grid { width: min(90vw, 420px); }
   
   .sudoku-cell { font-size: 18px; }
   
@@ -370,6 +372,6 @@ h2 {
 }
 
 @media (max-width: 480px) {
-  .sudoku-grid { width: 92vw; }
+  .sudoku-grid { width: 90vw; }
   .sudoku-cell { font-size: 16px; }
 }
