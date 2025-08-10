@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { 
   PuzzleGenerator, 
   GameState, 
@@ -17,7 +17,7 @@ function App() {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [pencilMode, setPencilMode] = useState(false);
   const [currentDifficulty, setCurrentDifficulty] = useState<Difficulty>(Difficulty.MEDIUM);
-  const [tick, setTick] = useState(0);
+  const [, setTick] = useState(0);
 
   // Update timer every second
   useEffect(() => {
