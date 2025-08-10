@@ -26,6 +26,7 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   color: var(--text-color);
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 120px);
 }
 
 #root {
@@ -53,12 +54,19 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .difficulty-chips {
   display: flex;
   gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 6px 0;
 }
+.difficulty-chips::-webkit-scrollbar { display: none; }
 
 .chip {
   padding: 8px 12px;
@@ -67,6 +75,7 @@ h2 {
   background: rgba(255,255,255,0.2);
   color: white;
   cursor: pointer;
+  white-space: nowrap;
 }
 .chip.active {
   background: white;
@@ -77,6 +86,7 @@ h2 {
   display: flex;
   gap: 16px;
   color: white;
+  flex-wrap: wrap;
 }
 
 /* Main content */
@@ -93,16 +103,16 @@ h2 {
 .sudoku-container {
   background: white;
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  margin: 20px auto;
+  margin: 12px auto;
   display: inline-block;
 }
 
 .sudoku-grid {
   display: grid;
-  grid-template-columns: repeat(9, 50px);
-  grid-template-rows: repeat(9, 50px);
+  grid-template-columns: repeat(9, 1fr);
+  width: min(92vw, 520px);
   border: 3px solid var(--border-color);
 }
 
@@ -117,8 +127,7 @@ h2 {
   cursor: pointer;
   transition: all 0.15s ease;
   border: 1px solid #ddd;
-  width: 50px;
-  height: 50px;
+  aspect-ratio: 1 / 1;
 }
 
 /* Add thick borders for 3x3 box separation */
@@ -353,26 +362,14 @@ h2 {
 /* Responsive Design */
 @media (max-width: 768px) {
   .content { grid-template-columns: 1fr; }
-  .sudoku-grid { width: 350px; height: 350px; }
+  .sudoku-grid { width: min(92vw, 420px); }
   
-  .sudoku-cell {
-    font-size: 18px;
-  }
+  .sudoku-cell { font-size: 18px; }
   
-  .keypad { max-width: 300px; margin: 0 auto; }
+  .keypad { max-width: 360px; margin: 0 auto; }
 }
 
 @media (max-width: 480px) {
-  .sudoku-grid {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .sudoku-cell {
-    font-size: 16px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
+  .sudoku-grid { width: 92vw; }
+  .sudoku-cell { font-size: 16px; }
 }
