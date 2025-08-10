@@ -1,0 +1,14 @@
+{
+  "name": "@sudoku-platform/android",
+  "version": "1.0.0",
+  "description": "Android native application for Sudoku platform",
+  "scripts": {
+    "build": "echo 'Android build handled by Gradle'",
+    "test": "echo 'Android tests handled by Gradle'",
+    "lint": "echo 'Android lint handled by Gradle'",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "@sudoku-platform/shared": "file:../shared"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@sudoku-platform/ios",
+  "version": "1.0.0",
+  "description": "iOS native application for Sudoku platform",
+  "scripts": {
+    "build": "echo 'iOS build handled by Xcode'",
+    "test": "echo 'iOS tests handled by Xcode'",
+    "lint": "swiftlint",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "@sudoku-platform/shared": "file:../shared"
+  }
+}
